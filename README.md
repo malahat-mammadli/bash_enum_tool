@@ -1,60 +1,63 @@
+## Bash Enumeration Tool
 
-# Bash Enumeration Tool
-
-A simple Bash script for basic web enumeration tasks like Nmap scanning, Gobuster directory brute-forcing, Whois lookup, WhatWeb, Nikto, and WPScan.
+A powerful, automated Bash script for web enumeration and information gathering. This tool integrates several industry-standard security tools into a single workflow to speed up the reconnaissance phase of a penetration test.
 
 ## Features
-
-- Runs Nmap with default scripts and service/version detection.
-- Performs directory enumeration with Gobuster.
-- Gathers Whois information.
-- Runs WhatWeb to identify web technologies.
-- Performs Nikto web server vulnerability scanning.
-- Scans WordPress sites with WPScan.
+- **Automated Workflow:** Runs multiple tools sequentially and organizes results.
+- **Port Scanning:** Uses `Nmap` for service and version detection.
+- **Technology Profiling:** Identifies CMS, frameworks, and server info via `WhatWeb`.
+- **Directory Brute-forcing:** Finds hidden files and folders using `Gobuster`.
+- **Vulnerability Scanning:** Performs web server security tests with `Nikto`.
+- **CMS Specific:** Automatically detects WordPress and launches `WPScan` if found.
+- **Clean Reporting:** Saves all results into a timestamped directory under `reports/`.
 
 ## Requirements
+The script requires the following tools to be installed on your system (standard on Kali Linux):
+* `nmap`
+* `gobuster`
+* `whois`
+* `whatweb`
+* `nikto`
+* `wpscan`
 
-- bash
-- nmap
-- gobuster
-- whois
-- whatweb
-- nikto
-- wpscan
+## Installation
 
-Make sure these tools are installed on your system.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/bash_enum_tool.git](https://github.com/YOUR_USERNAME/bash_enum_tool.git)
+   cd bash_enum_tool
+   ```
+
+2. **Give execution permissions:**
+   ```bash
+   chmod +x bash_enum_tool.sh
+   ```
 
 ## Usage
-
-1. Clone this repository or download the `bash_enum.sh` script.
-
-```bash
-git clone https://github.com/malahat-mammadli/bash_enum_tool.git
-cd bash_enum_tool
-````
-
-2. Make the script executable:
+To start a scan, simply provide the target domain or IP address as an argument:
 
 ```bash
-chmod +x bash_enum.sh
+./bash_enum_tool.sh example.com
 ```
 
-3. Run the script:
+### Example Workflow:
+1. Checks if all required tools are installed.
+2. Creates a dedicated report folder: `reports/example.com_20260325_1500/`.
+3. Runs Nmap, Whois, WhatWeb, and Gobuster.
+4. If WordPress is detected, it automatically initiates a user and plugin enumeration.
+5. Summarizes the status and location of all output files.
 
-```bash
-./bash_enum.sh
+## Project Structure
+```text
+.
+├── bash_enum_tool.sh   # Main script
+├── README.md           # Documentation
+└── reports/            # Generated scan results (Auto-created)
 ```
-
-4. Enter the target IP address or domain when prompted.
-
-5. Reports will be saved inside the `reports/` folder.
 
 ## Disclaimer
+This tool is for educational purposes and authorized penetration testing only. Usage of this tool for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state, and federal laws.
 
-Use this tool responsibly and only on systems you own or have explicit permission to test.
-
----
-
-Created by Malahat Mammadli
-[GitHub Profile](https://github.com/malahat-mammadli)
+## 🤝 Contributing
+Feel free to fork this repository, open issues, or submit pull requests to make this tool even better!
 
