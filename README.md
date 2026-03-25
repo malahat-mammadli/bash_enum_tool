@@ -24,7 +24,7 @@ The script requires the following tools to be installed on your system (standard
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/bash_enum_tool.git](https://github.com/YOUR_USERNAME/bash_enum_tool.git)
+   git clone [https://github.com/malahat-mammadli/bash_enum_tool.git](https://github.com/malahat-mammadli/bash_enum_tool.git)
    cd bash_enum_tool
    ```
 
