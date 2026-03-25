@@ -58,6 +58,6 @@ To start a scan, simply provide the target domain or IP address as an argument:
 ## Disclaimer
 This tool is for educational purposes and authorized penetration testing only. Usage of this tool for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state, and federal laws.
 
-## 🤝 Contributing
+## Contributing
 Feel free to fork this repository, open issues, or submit pull requests to make this tool even better!
 
